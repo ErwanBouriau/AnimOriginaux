@@ -2,11 +2,43 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Anim'Originaux{% endblock %}</title>
+
+        {% block stylesheets %}
+            {# Font awesome #}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <link href="{{ asset('css/header.css') }}" rel="stylesheet"/>
+        {% endblock %}
+
     </head>
     <body>
+        {% block header %} 
+            <div class="title">
+                <h1>Anim'Originaux</h1>
+            </div>
+            <div class="topnav" id="myTopnav">
+                <a href="/" class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
+                    Accueil
+                </a>
+                <a href="/animaux" class="{% if app.request.attributes.get('_route') == 'animal' %}active{% endif %}">
+                    Animaux
+                </a>
+                <a href="/compte" class="{% if app.request.attributes.get('_route') == 'account' %}active{% endif %}">
+                    Mon compte
+                </a>
+                <a href="javascript:void(0);" class="icon" onclick="openMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        {% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/nav.js') }}"></script>
+        {% endblock %}
+        
     </body>
 </html>
+
+
