@@ -1,0 +1,58 @@
+.animaux {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    flex: 0 1 300px;
+    height: 280px;
+    margin: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.card-footer p {
+    color: #086775;
+    font-family: "Unicorn", serif;
+    font-size: 50px;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-footer span {
+    color: #0098af;
+    font-weight: bold;
+}
+
+.infos {
+    position: absolute;
+    top: 5px; right: 5px;
+    font-size: 25px;
+}
+
+.infos a {
+    text-decoration: none;
+    color: #00f3ff;
+}
+  
