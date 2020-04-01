@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Anim'Originaux - Animaux{% endblock %}
+
+{% block body %}
+    {% if animal.disponibility == false %}
+        <h2>Animal non disponible !</h2>
+
+        {% else %}
+            <p>{{ animal.name }}</p>
+
+    {% endif %}
+
+
+
+        
+
+{% endblock %}

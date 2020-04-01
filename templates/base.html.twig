@@ -16,6 +16,12 @@
         {% block header %} 
             <div class="title">
                 <h1>Anim'Originaux</h1>
+                <div class="boutons">
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                        <a href="{{ path('admin') }}"><i class="fa fa-cogs"></i></a>
+                    {% endif %}
+                    <a href="{{ path('app_logout') }}"><i class="fa fa-sign-out"></i></a>
+                </div>
             </div>
             <div class="topnav" id="myTopnav">
                 <a href="/" class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">

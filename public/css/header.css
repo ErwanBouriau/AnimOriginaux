@@ -10,14 +10,20 @@ body {
   width: 100%;
 }
 
+.container {
+  width: 70%;
+  margin: auto;
+}
+
 .title {
-  background-image: url("../images/header-landscape.jpg");
+  background-image: url("../images/landscape.jpg");
   background-position: center;
   height: 150px;
   opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 h1 {
@@ -25,7 +31,18 @@ h1 {
   font-family: "Unicorn", serif;
   font-weight: bold;
   margin: 0;
-  font-size: calc(30px + 1vw);
+  font-size: 70px;
+}
+
+.boutons {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  font-size: 35px;
+}
+
+.boutons a {
+  color: black;
 }
 
 .topnav {
