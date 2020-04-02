@@ -30,7 +30,7 @@ input {
     margin-bottom: 10px;
 }
 
-a {
+.form a {
     color: white;
     text-align: center;
     font-size: 15px;
@@ -60,4 +60,35 @@ a {
 .form div {
     display: flex;
     flex-direction: column;
+}
+
+/* Account form */
+.form-account {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.form-account div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-account span {
+    font-style: italic;
+    font-weight: bold;
+    color: #086775;
+    margin: 5px;
+}
+
+.form-account button {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #086775;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 150px;
 }
