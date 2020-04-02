@@ -17,13 +17,13 @@ class Location
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="location", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="location", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Animal", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Animal", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $animal;

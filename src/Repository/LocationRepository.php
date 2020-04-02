@@ -20,14 +20,14 @@ class LocationRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param userId l'id de l'utilisateur 
+     * @param user l'utilisateur dont on veut les locations 
      * @return Location[] Returns an array of Location objects
     */
-    public function findByExampleField($userId)
+    public function getLocationsByUser($user)
     {
         return $this->createQueryBuilder('l')
-            ->andWhere('l.user_id = :val')
-            ->setParameter('val', $userId)
+            ->andWhere('l.user = :val')
+            ->setParameter('val', $user)
             ->orderBy('l.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
@@ -35,15 +35,15 @@ class LocationRepository extends ServiceEntityRepository
         ;
     }
 
-    /*
-    public function findOneBySomeField($value): ?Location
+    
+    public function getLocationByAnimal($animal): ?Location
     {
         return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('l.animal = :val')
+            ->setParameter('val', $animal)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+    
 }
