@@ -1,0 +1,58 @@
+.animal-header {
+    display: flex;
+}
+
+img {
+    width: 75%;
+}
+
+h3 {
+    color: #086775;
+    font-family: "Unicorn", serif;
+    font-size: 50px;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin: 0;
+}
+
+h4 {
+    color: #0098af;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.animal-location {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.animal-location button {
+    padding: 5px;
+    margin: 15px;
+    border-radius: 5px;
+    background-color: #086775;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid #086775;
+    cursor: pointer;
+}
+
+.animal-location button:hover {
+    background-color: white;
+    color: #086775;
+}
+
+.animal-location span {
+    color: #0098af;
+    font-weight: bold;
+}
+
+.animal-row {
+    display: flex;
+    align-items: center;
+}

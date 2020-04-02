@@ -3,7 +3,7 @@
   src: url("../font/Bad_Unicorn.ttf")
  }
 
-body {
+html, body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
@@ -49,6 +49,7 @@ h1 {
   overflow: hidden;
   background-color: #0098af;
   position: sticky;
+  z-index: 2;
   top: 0;
 }
 
