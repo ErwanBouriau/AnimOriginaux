@@ -19,22 +19,21 @@ class LocationRepository extends ServiceEntityRepository
         parent::__construct($registry, Location::class);
     }
 
-    // /**
-    //  * @return Location[] Returns an array of Location objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @param userId l'id de l'utilisateur 
+     * @return Location[] Returns an array of Location objects
+    */
+    public function findByExampleField($userId)
     {
         return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('l.user_id = :val')
+            ->setParameter('val', $userId)
             ->orderBy('l.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Location
