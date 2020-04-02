@@ -1,0 +1,63 @@
+.background {
+    background-image: url("../images/landscape.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #086775;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+input {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.alert {
+    text-align: center;
+    color: #f7988a;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+.btn {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    color: #086775;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Registration form */
+.form div {
+    display: flex;
+    flex-direction: column;
+}
