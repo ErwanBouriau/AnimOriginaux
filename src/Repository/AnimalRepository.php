@@ -43,7 +43,7 @@ class AnimalRepository extends ServiceEntityRepository
             ->andWhere('a.id = :id')
             ->setParameter('id', $id)
             ->getQuery()
-            ->getResult()
+            ->getOneOrNullResult()
         ;
     }
 

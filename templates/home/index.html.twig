@@ -2,11 +2,34 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    
+    <link href="{{ asset('css/animaux.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block title %}Anim'Originaux - Accueil{% endblock %}
 
 {% block body %}
+<div class="container">
+    <h2>Vos locations actuelles :</h2>
+    <div class="animaux">
+        {% if animals is empty %}
+            <h2>Vous n'avez pas encore loué d'animaux !</h2>
+        {% else %}
+            
+            {% for animal in animals %}
+                <div class="card">
+                    <img src="{{ asset('images-bdd/' ~ animal.name ~ '.jpg')}}"  alt="">
+                    <div class="infos">
+                        <a href="{{ path('animalInfo', {id: animal.id}) }}"><i class="fa fa-info-circle"></i></a>       
+                    </div>
+                    <div class="card-footer">
+                        <p>{{ animal.name }} </p>
+                        <span>{{ animal.price }} AOpt</span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
 
 {% endblock %}
+

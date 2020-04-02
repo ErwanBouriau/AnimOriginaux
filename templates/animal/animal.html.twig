@@ -9,15 +9,13 @@
 
 {% block body %}
     <div class="container">
-        {% if animal.disponibility == false %}
-            <h2>Animal non disponible !</h2>
-        {% else %}
+        {% if location == null %}
             <div class="animal-header">
                 <img src="{{ asset('images-bdd/' ~ animal.name ~ '.jpg')}}"  alt="">
                 <div class="animal-location">
                     <span>{{ animal.price }} AOpt</span>
                     <form method="post">
-                        <input name="location" type="text" value="false" hidden>
+                        <input name="location" type="text" value="loue" hidden>
                         <button type="submit">Louer</button>
                     </form>
                 </div>
@@ -35,6 +33,33 @@
                 <h4>Nourriture : </h4>
                 <span>{{ animal.food | default('Inconnue') }}</span>
             </div>
+        {% else %}
+            {% if location.user != app.user %}
+                <h2>Animal non disponible !</h2>
+            {% else %}
+                <div class="animal-header">
+                    <img src="{{ asset('images-bdd/' ~ animal.name ~ '.jpg')}}"  alt="">
+                    <div class="animal-location">
+                        <form method="post">
+                            <input name="location" type="text" value="rend" hidden>
+                            <button type="submit">Rendre</button>
+                        </form>
+                    </div>
+                </div>
+                <h3>{{ animal.name }}</h3>
+                <div class="animal-row">
+                    <h4>Poids : </h4>
+                    <span>{{ animal.weight }} kg</span>
+                </div>
+                <div class="animal-row">
+                    <h4>Taille : </h4>
+                    <span>{{ animal.height }} cm</span>
+                </div>
+                <div class="animal-row">
+                    <h4>Nourriture : </h4>
+                    <span>{{ animal.food | default('Inconnue') }}</span>
+                </div>
+            {% endif %}  
         {% endif %}
     </div>
 {% endblock %}
