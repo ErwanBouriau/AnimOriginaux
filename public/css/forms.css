@@ -63,26 +63,26 @@ input {
 }
 
 /* Account form */
-.form-account {
+.form-app {
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 25px;
 }
 
-.form-account div {
+.form-app div {
     display: flex;
     flex-direction: column;
 }
 
-.form-account span {
+.form-app span {
     font-style: italic;
     font-weight: bold;
     color: #086775;
     margin: 5px;
 }
 
-.form-account button {
+.form-app button {
     padding: 5px;
     border-radius: 5px;
     background-color: #086775;

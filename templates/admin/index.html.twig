@@ -1,20 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}Anim'Originaux - Administration{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/Projets_Cours/AnimOriginaux/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/Projets_Cours/AnimOriginaux/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
+<div class="container">
+    <h2>Animaux</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Poids</th>
+                <th>Taille</th>
+                <th>Nourriture</th>
+                <th>Prix</th>
+                <th>Disponible</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animals %}             
+                <tr>
+                    <td>{{animal.name}}</td>
+                    <td>{{animal.weight}}</td>
+                    <td>{{animal.height }}</td>
+                    <td>{{animal.food | default('Inconnue')}}</td>
+                    <td>{{animal.price}}</td>
+                    <td>{{animal.disponibility ? 'oui' : 'non'}}</td>
+                    <td>
+                        <a href="{{ path('update', {id: animal.id}) }}" class="update"><i class="fa fa-pencil-square"></i></a>
+                        <a href="{{ path('delete', {id: animal.id}) }}" class="delete"><i class="fa fa-times-rectangle"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('new')}}" class="add">Ajouter un animal</a>
 </div>
+
 {% endblock %}
