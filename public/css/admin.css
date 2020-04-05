@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    color: white;
+    background-color: #086775;
+}
+
+td a {
+    font-size: 25px;
+}
+
+.update {
+    color: #28a745;
+}
+
+.delete {
+    color: #dc3545;
+}
+
+.add {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #086775;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

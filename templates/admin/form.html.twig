@@ -10,11 +10,12 @@
 {% block body %}
 <div class="container">
     {{ form_start(form) }}
-        <div class="form-app">
-            {{ form_row(form.login) }}
-            {{ form_row(form.password) }}
-            <span>({{ app.user.money }} AOpt actuellement)</span>
-            {{ form_row(form.money) }}
+        <div class="form-account">
+            {{ form_row(form.name) }}
+            {{ form_row(form.weight) }}
+            {{ form_row(form.height) }}
+            {{ form_row(form.food) }}
+            {{ form_row(form.price) }}
             {{ form_row(form.save) }}
         </div>
     {{ form_end(form) }}
